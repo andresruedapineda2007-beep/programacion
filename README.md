@@ -38,6 +38,48 @@ public class Calculadora {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // Solicitar los dos números al usuario
+        System.out.println("Ingrese dos números:");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+
+        // Solicitar la operación
+        System.out.println("Elija operación (+, -, *, /):");
+        char op = sc.next().charAt(0);
+
+        double r = 0;
+
+        switch (op) {
+            case '+':
+                r = a + b;
+                break;
+            case '-':
+                r = a - b;
+                break;
+            case '*':  // se corrigió aquí: originalmente estaba en blanco (' ')
+                r = a * b;
+                break;
+            case '/':
+                if (b != 0) {
+                    r = a / b;
+                } else {
+                    System.out.println("Error: División por cero.");
+                    sc.close();
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Operación no válida.");
+                sc.close();
+                return;
+        }
+
+        System.out.println("Resultado: " + r);
+        sc.close();
+    }
+}
+
+
 
 2. Contar vocales y consonantes:
 
