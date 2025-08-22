@@ -33,24 +33,11 @@ Parte Práctica
 1. Calculadora básica en Java:
 
 import java.util.Scanner;
+
 public class Calculadora {
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Ingrese dos números:");
-    double a = sc.nextDouble();
-    double b = sc.nextDouble();
-    System.out.println("Elija operación (+, -, *, /):");
-    char op = sc.next().charAt(0);
-    double r = 0;
-    switch(op) {
-      case '+': r = a+b; break;
-      case '-': r = a-b; break;
-      case '*': r = a*b; break;
-      case '/': r = a/b; break;
-    }
-    System.out.println("Resultado: " + r);
-  }
-}
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
 
 2. Contar vocales y consonantes:
 
