@@ -54,31 +54,57 @@ public class Calculadora {
 
 2. Contar vocales y consonantes:
 
-import java.util.Scanner;
-public class Contador {
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Ingrese una palabra:");
-    String palabra = sc.next();
-    int vocales = 0, consonantes = 0;
-    for(char c : palabra.toCharArray()) {
-      if("aeiou".indexOf(c) != -1) vocales++;
-      else consonantes++;
-    }
-    System.out.println("Vocales: " + vocales);
-    System.out.println("Consonantes: " + consonantes);
-  }
-}
 
+import java.util.Scanner;
+
+public class ContadorVocalesConsonantes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Introduce una palabra: ");
+        String palabra = scanner.nextLine();
+        
+        int contadorVocales = 0;
+        int contadorConsonantes = 0;
+
+        for (char letra : palabra.toCharArray()) {
+            if (esVocal(letra)) {
+                contadorVocales++;
+            } else if (esConsonante(letra)) {
+                contadorConsonantes++;
+            }
+        }
+
+        System.out.println("Número de vocales: " + contadorVocales);
+        System.out.println("Número de consonantes: " + contadorConsonantes);
+        
+        scanner.close();
+    }
+
+    private static boolean esVocal(char letra) {
+        return "aeiou".indexOf(letra) != -1;
+    }
+
+    private static boolean esConsonante(char letra) {
+        return "bcdfghjklmnpqrstvwxyz".indexOf(letra) != -1;
+    }
+}
 3. Invertir una cadena:
 
 import java.util.Scanner;
-public class Invertir {
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Ingrese un texto:");
-    String texto = sc.nextLine();
-    String invertido = new StringBuilder(texto).reverse().toString();
-    System.out.println("Invertido: " + invertido);
-  }
+
+public class InvertirCadena {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Introduce una cadena de texto: ");
+        String texto = scanner.nextLine();
+        
+        String textoInvertido = new StringBuilder(texto).reverse().toString();
+        
+        System.out.println("Cadena original: " + texto);
+        System.out.println("Cadena invertida: " + textoInvertido);
+        
+        scanner.close();
+    }
 }
