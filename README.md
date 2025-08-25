@@ -33,9 +33,4 @@ Programación en Java
 
 
         
-        System.out.println("Cadena original: " + texto);
-        System.out.println("Cadena invertida: " + textoInvertido);
-        
-        scanner.close();
-    }
-}
+   
